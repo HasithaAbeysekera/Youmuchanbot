@@ -59,11 +59,11 @@ client.on("message", message => {
 	} else
 
 	if (command === "fistbump") {
-		message.channel.sendFile("http://i.imgur.com/wSJoNoN.gifv", "fistbump.gifv");
+		message.channel.sendFile("http://i.imgur.com/wSJoNoN.gif", "fistbump.gif");
 	} else
 
 	if (command === "puckclap") {
-		message.channel.sendFile("http://i.imgur.com/V3KrCUo.gifv", "puckclap.gifv");
+		message.channel.sendFile("http://i.imgur.com/V3KrCUo.gif", "puckclap.gif");
 	} else
 
 	if(command === "setgame"){
@@ -80,7 +80,7 @@ client.on("message", message => {
 		let sushiRole = message.guild.roles.find("name", "Sushi-ass man");
 		if(message.member.roles.has(sushiRole.id)) {
 			message.channel.sendMessage("Sushi!");
-			message.channel.sendFile("http://i.imgur.com/mlRUf0a.gifv", "sishi.gifv");
+			message.channel.sendFile("http://i.imgur.com/mlRUf0a.gif", "sishi.gif");
 		} else {
 			message.channel.sendMessage("You do not have the power of the sushi");
 		}
@@ -128,7 +128,7 @@ client.on("message", message => {
 			message.channel.sendMessage("User not found");
 			return;
 		}
-	}
+	} else
 });
 
 client.on("emojiCreate", emoji => {
