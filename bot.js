@@ -129,6 +129,14 @@ client.on("message", message => {
 			return;
 		}
 	} else
+
+	if(command === "2booty") {
+		message.channel.sendFile("http://i.imgur.com/CvFfCME.png", "2booty.png");
+	} else
+
+	if(command === "runpika") {
+		message.channel.sendFile("http://i.imgur.com/Jo8hycn.gif", "runpika.gif");
+	}
 });
 
 client.on("emojiCreate", emoji => {
