@@ -1,7 +1,7 @@
 const Discord = require("discord.js");
 const client = new Discord.Client();
-const token = require("./settings.json").token;
-const prefix = require("./settings.json").prefix;
+const token = require("./config.json").token;
+const prefix = require("./config.json").prefix;
 
 client.on("ready",() => {
 	console.log("I'm online.");
@@ -117,13 +117,14 @@ client.on("message", message => {
 		if(argresult == "") {
 			message.reply("Your avatar is:");
 			message.channel.sendFile(message.author.avatarURL, 'avatar.jpg');
-		} else {
-			let target = client.users.find("username", argresult);
-			//let targetuser = message.mentions.users.first();
-			//message.guild.member(target).user;
-			//let target = message.guild.members.find(u => u.id === targetuser.id);
-			message.channel.sendMessage("avatar test");
-			message.channel.sendMessage(target.username);
+		} else
+		if (message.guild.members.find(u => u.displayName.toLowerCase() === argresult.toLowerCase())){
+	    let target = message.guild.members.find(u => u.displayName.toLowerCase() === argresult.toLowerCase());
+	    message.channel.sendMessage(target.user + "'s avatar is:\n");
+	    message.channel.sendFile(target.user.avatarURL, 'avatar.jpg');
+	  } else {
+			message.channel.sendMessage("User not found");
+			return;
 		}
 	}
 });
