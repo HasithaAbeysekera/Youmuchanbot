@@ -44,14 +44,11 @@ client.on("message", message => {
 	} else
 
 	if (command === "thumbsup") {
-		message.channel.sendFile("http://i.imgur.com/fYgao84.jpg", "thumbsup.jpg");
-		//message.channel.sendEmbed("./assets.fistbump.gif", "fistbump.gif");
+		message.channel.sendFile("http://i.imgur.com/DCFzew1.jpg", "thumbsup.jpg");
 	} else
 
 	if (command === "say") {
 		message.channel.sendMessage(argresult);
-		//.then(message =>console.log(`Sent message: ${message.content}`))
-		//.catch(console.error);
 	} else
 
 	if (command === "add") {
@@ -62,13 +59,11 @@ client.on("message", message => {
 	} else
 
 	if (command === "fistbump") {
-		//message.channel.sendMessage("http://i.imgur.com/6lMLwSv.gif");
-		message.channel.sendFile("http://i.imgur.com/6lMLwSv.gif", "fistbump.gif");
+		message.channel.sendFile("http://i.imgur.com/wSJoNoN.gifv", "fistbump.gifv");
 	} else
 
 	if (command === "puckclap") {
-		message.channel.sendMessage("https://gfycat.com/NeatWearyBluemorphobutterfly");
-		//message.channel.sendFile("http://i.imgur.com/lYnxiod.mp4", "puckclap.mp4");
+		message.channel.sendFile("http://i.imgur.com/V3KrCUo.gifv", "puckclap.gifv");
 	} else
 
 	if(command === "setgame"){
@@ -84,7 +79,8 @@ client.on("message", message => {
 	if (command === "sushi") {
 		let sushiRole = message.guild.roles.find("name", "Sushi-ass man");
 		if(message.member.roles.has(sushiRole.id)) {
-			message.channel.sendMessage("Sushi! \n http://i.imgur.com/NUkfIFu.gif");
+			message.channel.sendMessage("Sushi!");
+			message.channel.sendFile("http://i.imgur.com/mlRUf0a.gifv", "sishi.gifv");
 		} else {
 			message.channel.sendMessage("You do not have the power of the sushi");
 		}
@@ -118,6 +114,12 @@ client.on("message", message => {
 			message.reply("Your avatar is:");
 			message.channel.sendFile(message.author.avatarURL, 'avatar.jpg');
 		} else
+		/*if (message.isMentioned(argresult)) {
+			let target = message.mentions.users.first();
+			let targetuser = message.guild.members.find(u => u.id === target.id);
+			message.channel.sendMessage(targetuser + "'s avatar is:\n");
+			message.channel.sendFile(targetuser.user.avatarURL, 'avatar.jpg');
+		} else */
 		if (message.guild.members.find(u => u.displayName.toLowerCase() === argresult.toLowerCase())){
 	    let target = message.guild.members.find(u => u.displayName.toLowerCase() === argresult.toLowerCase());
 	    message.channel.sendMessage(target.user + "'s avatar is:\n");
