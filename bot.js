@@ -2,6 +2,7 @@ const Discord = require("discord.js");
 const client = new Discord.Client();
 const token = require("./config.json").token;
 const prefix = require("./config.json").prefix;
+const ownerid = require("./config.json").ownerid;
 
 client.on("ready",() => {
 	console.log("I'm online.");
