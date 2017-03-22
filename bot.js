@@ -35,7 +35,6 @@ client.on("message", message => {
 	command = command.slice(prefix.length);
 	console.log(command);
 
-
 	let args = message.content.split(" ").slice(1);
 	var argresult = args.join(" ");
 
@@ -136,6 +135,10 @@ client.on("message", message => {
 
 	if(command === "runpika") {
 		message.channel.sendFile("http://i.imgur.com/Jo8hycn.gif", "runpika.gif");
+	} else
+
+	if (commands === "carnival") {
+		message.channel.sendFile("http://i.imgur.com/BH2dcnh.gif", "carnival.gif");
 	}
 });
 
