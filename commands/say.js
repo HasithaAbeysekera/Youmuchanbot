@@ -1,3 +1,3 @@
 exports.run = function(client, message, args) {
-    message.channel.sendMessage(`Pong!!`);
+    message.channel.sendMessage(args.join(" "));
 };
