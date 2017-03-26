@@ -9,8 +9,8 @@ exports.run = function(client, message, args) {
         	message.channel.sendMessage(targetuser + "'s avatar is:\n");
         	message.channel.sendFile(targetuser.user.avatarURL, 'avatar.jpg');
         } else */
-        if (message.guild.members.find(u => u.displayName.toLowerCase() === args.toString().toLowerCase())) {
-            let target = message.guild.members.find(u => u.displayName.toLowerCase() === args.toString().toLowerCase());
+        if (message.guild.members.find(u => u.displayName.toLowerCase() == args.join(" ").toLowerCase())) {
+            let target = message.guild.members.find(u => u.displayName.toLowerCase() == args.join(" ").toLowerCase());
             message.channel.sendMessage(target.user + "'s avatar is:\n");
             message.channel.sendFile(target.user.avatarURL, 'avatar.jpg');
         } else {
