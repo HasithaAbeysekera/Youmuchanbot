@@ -1,3 +1,8 @@
 exports.run = function(client, message, args) {
-    message.channel.sendFile("http://i.imgur.com/V3KrCUo.gif", "puckclap.gif");
+    message.channel.sendEmbed({
+        color: 0xFFFFFF,
+        image: {
+            url: "http://i.imgur.com/V3KrCUo.gif"
+        }
+    });
 };

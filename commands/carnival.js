@@ -1,10 +1,9 @@
 exports.run = function(client, message, args) {
-    message.channel.sendFile("http://i.imgur.com/BH2dcnh.gif", "carnival.gif");
-    // message.channel.sendEmbed({
-    //     color: 3447003,
-    //     url: "http://i.imgur.com/BH2dcnh.gif",
-    //     "image": {
-    //         "url": "http://i.imgur.com/BH2dcnh.gif",
-    //     }
-    // });
+    message.channel.sendEmbed({
+        title: 'CARNIVAL DAYO!',
+        color: 15750656,
+        image: {
+            url: "http://i.imgur.com/BH2dcnh.gif"
+        }
+    });
 };
