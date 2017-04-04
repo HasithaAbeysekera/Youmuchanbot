@@ -1,3 +1,5 @@
 module.exports = emoji => {
-  console.log(`New emoji created on guild: ${emoji.guild.name}`);
+  guild = emoji.guild
+  console.log(`New emoji created on guild: ${guild.name}`);
+  guild.defaultChannel.sendMessage(`New emoji: ${emoji.url}`);
 }

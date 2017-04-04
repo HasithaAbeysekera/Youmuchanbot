@@ -3,7 +3,7 @@ const client = new Discord.Client();
 const token = require("./config.json").token;
 const prefix = require("./config.json").prefix;
 const ownerid = require("./config.json").ownerid;
-require('./util/eventLoader')(client);
+require('./util/EventLoader')(client);
 
 var reload = (message, cmd) => {
     delete require.cache[require.resolve('./commands/' + cmd)];
