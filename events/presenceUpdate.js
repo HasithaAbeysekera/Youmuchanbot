@@ -10,5 +10,8 @@ module.exports = (oldMember, newMember) => {
         if (playing == "League of Legends") {
             newMember.addRole(guild.roles.find("name", "Summoners"));
         }
+        if (playing == "Rust") {
+              newMember.addRole(guild.roles.find("name", "Rust"));
+          }
     }
 }
