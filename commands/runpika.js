@@ -6,3 +6,16 @@ exports.run = function(client, message, args) {
         }
     });
 };
+
+exports.conf = {
+  enabled: true,
+  guildOnly: false,
+  aliases: ['runepika'],
+  permLevel: 0
+};
+
+exports.help = {
+  name: 'runpika',
+  description: 'Whoa Whoa! Whoa Whoa!',
+  usage: 'runpika'
+};

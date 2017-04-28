@@ -21,3 +21,16 @@ exports.run = function(client, message, args) {
         message.channel.sendMessage(`Error: April Fools not found`);
     }
 };
+
+exports.conf = {
+  enabled: true,
+  guildOnly: false,
+  aliases: [],
+  permLevel: 4
+};
+
+exports.help = {
+  name: 'april1',
+  description: 'More Holo. More Fun',
+  usage: 'april1'
+};

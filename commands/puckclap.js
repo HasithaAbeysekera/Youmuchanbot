@@ -6,3 +6,16 @@ exports.run = function(client, message, args) {
         }
     });
 };
+
+exports.conf = {
+  enabled: true,
+  guildOnly: false,
+  aliases: ['clap', 'puck'],
+  permLevel: 0
+};
+
+exports.help = {
+  name: 'puckclap',
+  description: 'Puck approves',
+  usage: 'puckclap'
+};

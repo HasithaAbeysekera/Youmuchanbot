@@ -7,3 +7,16 @@ exports.run = function(client, message, args) {
         }
     });
 };
+
+exports.conf = {
+  enabled: true,
+  guildOnly: false,
+  aliases: ['carnivaldayo'],
+  permLevel: 0
+};
+
+exports.help = {
+  name: 'carnival',
+  description: 'IT\'S A CARNIVAL',
+  usage: 'carnival'
+};

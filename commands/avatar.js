@@ -22,3 +22,16 @@ exports.run = function(client, message, args) {
         return;
     }
 };
+
+exports.conf = {
+  enabled: true,
+  guildOnly: false,
+  aliases: ['profilepic', 'icon'],
+  permLevel: 0
+};
+
+exports.help = {
+  name: 'avatar',
+  description: 'Display\'s the user\'s or server\'s avatar. Displays your own avatar if username is empty',
+  usage: 'avatar [username (can be text or a mention)] or [server]'
+};

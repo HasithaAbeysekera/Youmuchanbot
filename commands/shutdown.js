@@ -10,3 +10,16 @@ exports.run = function(client, message, args) {
         message.channel.sendMessage("You do not have permission to use this command");
     }
 };
+
+exports.conf = {
+  enabled: true,
+  guildOnly: false,
+  aliases: [],
+  permLevel: 3
+};
+
+exports.help = {
+  name: 'shutdown',
+  description: 'Shuts down Youmu',
+  usage: 'shutdown'
+};

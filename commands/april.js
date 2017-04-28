@@ -8,3 +8,16 @@ exports.run = function(client, message, args) {
         currMember.setNickname("HolotheWise");
     }
 };
+
+exports.conf = {
+  enabled: true,
+  guildOnly: false,
+  aliases: [],
+  permLevel: 4
+};
+
+exports.help = {
+  name: 'april',
+  description: 'Because we all want to be HolotheWise',
+  usage: 'april'
+};

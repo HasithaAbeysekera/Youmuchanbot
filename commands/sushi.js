@@ -14,3 +14,16 @@ exports.run = function(client, message, args) {
         message.channel.sendMessage("You do not have the power of the sushi");
     }
 };
+
+exports.conf = {
+  enabled: true,
+  guildOnly: false,
+  aliases: [],
+  permLevel: 0
+};
+
+exports.help = {
+  name: 'sushi',
+  description: 'I don\'t even....',
+  usage: 'sushi'
+};

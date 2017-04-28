@@ -7,3 +7,16 @@ exports.run = function(client, message, args) {
         return;
     }
 };
+
+exports.conf = {
+  enabled: true,
+  guildOnly: false,
+  aliases: [],
+  permLevel: 4
+};
+
+exports.help = {
+  name: 'dsay',
+  description: 'Youmu will talk in the default channel',
+  usage: 'dsay [message]'
+};

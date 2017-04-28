@@ -22,3 +22,16 @@ exports.run = function(client, message, args) {
         ],
     });
 }
+
+exports.conf = {
+  enabled: true,
+  guildOnly: false,
+  aliases: ['shinyteeth', 'myshinyteeth'],
+  permLevel: 0
+};
+
+exports.help = {
+  name: 'hestiadance',
+  description: 'You\'ve got 32 of \'em, remember to keep them clean!',
+  usage: 'hestiadance'
+};
