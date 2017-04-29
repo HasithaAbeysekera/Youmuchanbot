@@ -1,4 +1,4 @@
-exports.run = function(client, message, args) {
+exports.run = (client, message, args) => {
     let numArray = args.map(n => parseInt(n));
     let total = numArray.reduce((p, c) => p + c);
     message.channel.sendMessage(total);
@@ -12,7 +12,7 @@ exports.conf = {
 };
 
 exports.help = {
-  name: 'help',
+  name: 'add',
   description: 'In case you needed to do some addition',
   usage: 'add [number1] [number2] ....'
 };

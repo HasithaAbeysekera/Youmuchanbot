@@ -7,6 +7,7 @@ module.exports = client => {
   client.on('guildMemberAdd', reqEvent('guildmemberadd'));
   client.on('guildMemberRemove', reqEvent('guildmemberremove'));
   client.on('guildCreate', reqEvent('guildcreate'));
-  //client.on('emojiCreate', reqEvent('emojiCreate'));
+  client.on('emojiCreate', reqEvent('emojiCreate'));
+  client.on('emojiUpdate', reqEvent('emojiUpdate'));
   client.on('presenceUpdate', reqEvent('presenceUpdate'));
 };
