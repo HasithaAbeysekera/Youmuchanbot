@@ -15,6 +15,6 @@ exports.conf = {
 
 exports.help = {
   name: 'setstream',
-  description: 'Will change Youmu\'s status to streaming named tile',
+  description: 'Change Youmu\'s status to streaming [streamtitle]',
   usage: 'setstream [streamtitle]'
 };

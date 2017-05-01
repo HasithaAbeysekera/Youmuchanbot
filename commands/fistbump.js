@@ -16,6 +16,6 @@ exports.conf = {
 
 exports.help = {
   name: 'fistbump',
-  description: 'A fist bump can be a symbol of giving respect or approval',
+  description: 'A symbol of giving respect or approval',
   usage: 'fistbump'
 };

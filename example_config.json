@@ -2,7 +2,7 @@
     "token": "Insert bot token here",
     "prefix": "-",
     "ownerid": "Guild owner's user id here",
-    "apis": {
-        "mal": "user:pass"
+    "modrolename": "ModeratorRoleNameHere",
+    "adminrolename": "AdminRoleNameHere"
     }
 }

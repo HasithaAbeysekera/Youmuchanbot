@@ -29,8 +29,29 @@ exports.run = (client, message, args) => {
     } else {
         let command = args[0];
         if (client.commands.has(command)) {
-            command = client.commands.get(command);
-            message.channel.sendCode('asciidoc', `= ${command.help.name} = \n${command.help.description}\nusage::${command.help.usage}`);
+            // command = client.commands.get(command);
+            // message.channel.sendCode('asciidoc', `= ${command.help.name} = \n${command.help.description}\nusage::${command.help.usage}`);
+            const cmdPermlvl = ["Everyone", "", "Mods Only", "Admin Only", "Owner Only"]
+            let thisCommand = client.commands.get(command);
+            let aliaslist = thisCommand.conf.aliases;
+            if(aliaslist.length == 0){
+              aliases = "none";
+            } else {
+              aliases = `${prefix}${aliaslist.join(` ${prefix}`)}`;
+            }
+
+            const embed = new Discord.RichEmbed()
+                .setAuthor(`${prefix}${command}`, `${message.author.avatarURL}`)
+                .setTitle(`\u200b`)
+                .setThumbnail(client.user.avatarURL)
+                .setColor(0x00AE86)
+                .setDescription(`**Aliases - ** ${aliases}\n
+                **Usage - ** ${prefix}${thisCommand.help.usage}\n
+                **Description - ** ${thisCommand.help.description}\n
+                **Permission Level - ** ${cmdPermlvl[thisCommand.conf.permLevel]}`)
+                .setTimestamp();
+
+            message.channel.sendEmbed(embed);
         }
     }
 };
@@ -44,6 +65,6 @@ exports.conf = {
 
 exports.help = {
     name: 'help',
-    description: 'Displays all the available commands for your permission level.',
+    description: 'Displays help for the specified command or shows whole command list if none specificed',
     usage: 'help [command]'
 };

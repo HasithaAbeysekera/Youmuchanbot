@@ -50,6 +50,6 @@ exports.conf = {
 
 exports.help = {
   name: 'anime',
-  description: 'Looks up information on the anime on MyAnimeList',
+  description: 'Looks up the anime on MyAnimeList. (WIP)',
   usage: 'anime [seriesname]'
 };
