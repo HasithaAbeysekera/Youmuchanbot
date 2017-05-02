@@ -45,8 +45,8 @@ exports.run = (client, message, args) => {
                 .setTitle(`\u200b`)
                 .setThumbnail(client.user.avatarURL)
                 .setColor(0x00AE86)
-                .setDescription(`**Aliases - ** ${aliases}\n
-                **Usage - ** ${prefix}${thisCommand.help.usage}\n
+                .setDescription(`**Aliases: ** ${aliases}\n
+                **Usage: ** ${prefix}${thisCommand.help.usage}\n
                 **Description - ** ${thisCommand.help.description}\n
                 **Permission Level - ** ${cmdPermlvl[thisCommand.conf.permLevel]}`)
                 .setTimestamp();
