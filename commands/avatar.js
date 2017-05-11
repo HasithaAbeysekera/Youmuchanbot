@@ -1,4 +1,3 @@
-var userAvatar = require('../util/userAvatar.js');
 var getUser = require('../util/getUser.js');
 
 exports.run = function(client, message, args) {
