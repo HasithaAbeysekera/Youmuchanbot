@@ -3,6 +3,7 @@
     "prefix": "-",
     "ownerid": "Guild owner's user id here",
     "modrolename": "ModeratorRoleNameHere",
-    "adminrolename": "AdminRoleNameHere"
+    "adminrolename": "AdminRoleNameHere",
+    "silencedrole": "SilencedRoleNameHere"
     }
 }
