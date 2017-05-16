@@ -7,6 +7,7 @@ const prefix = require("./config.json").prefix;
 const ownerid = require("./config.json").ownerid;
 const modrolename = require("./config.json").modrolename;
 const adminrolename = require("./config.json").adminrolename;
+var changeAvatars = require('./util/changeAvatar.js');
 require('./util/EventLoader')(client);
 
 const log = message => {
@@ -62,6 +63,8 @@ client.elevation = message => {
     if (message.author.id === ownerid) permlvl = 4;
     return permlvl;
 };
+
+//client.setInterval(changeAvatars, (5000));
 
 process.on("unhandledRejection", err => {
     console.error("Uncaught Promise Error: \n" + err.stack);
