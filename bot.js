@@ -50,6 +50,8 @@ client.reload = command => {
 };
 
 
+
+
 client.login(token);
 
 client.elevation = message => {

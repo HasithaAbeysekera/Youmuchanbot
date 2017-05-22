@@ -11,13 +11,13 @@ module.exports = (oldMember, newMember) => {
             newMember.addRole(guild.roles.find("name", gameGroupName))
         }
     }
-    // if (playing == "World of Warships") {
-    //     newMember.addRole(guild.roles.find("name", "Admirals"));
-    // } else
-    // if (playing == "League of Legends") {
-    //     newMember.addRole(guild.roles.find("name", "Summoners"));
-    // }
-    // if (playing == "Rust") {
-    //       newMember.addRole(guild.roles.find("name", "Rust"));
-    // }
+    if (playing == "World of Warships") {
+        newMember.addRole(guild.roles.find("name", "Admirals"));
+    } else
+    if (playing == "League of Legends") {
+        newMember.addRole(guild.roles.find("name", "Summoners"));
+    }
+    if (playing == "Rust") {
+          newMember.addRole(guild.roles.find("name", "Rust"));
+    }
 };
