@@ -2,7 +2,8 @@ const fs = require('fs');
 let gameGroup = JSON.parse(fs.readFileSync('./db/gamegroups.json', 'utf8'));
 const Discord = require("discord.js");
 const prefix = require("../config.json").prefix;
-// var gameGroup = require("../db/gamegroups.json");
+var presenceUpdate = require('../events/presenceUpdate.js');
+
 exports.run = (client, message, args) => {
     if (!args[0]) { //no list gamegroups
         message.channel.sendMessage(`List of Game Groups:`);
@@ -31,20 +32,7 @@ exports.run = (client, message, args) => {
             if (message.guild.roles.find(r => r.name.toLowerCase() == roleName.toLowerCase())) {
                 return message.channel.sendMessage(`That role already exists, please choose another name for the role`);
             }
-            // message.channel.sendMessage(`Creating role \`@${roleName}\` for game **${gameName}**`);
-            //
-            // message.guild.createRole({
-            //         name: `${roleName}`,
-            //         mentionable: true
-            //     })
-            //     .then(role => console.log(`Created role ${role.name}`))
-            //     .catch(console.error);
-            //
-            // gameGroup[gameName] = roleName;
-            //
-            // fs.writeFile('./db/gamegroups.json', JSON.stringify(gameGroup), (err) => {
-            //     if (err) return message.channel.sendMessage("Error writing to file, role not created. Please try again");
-            // });
+            //error checking all done. actually creating role now
             message.channel.sendMessage(`Creating role \`@${roleName}\` for game **${gameName}**`)
                 .then(gameGroup[gameName] = roleName)
                 .then(
@@ -55,28 +43,21 @@ exports.run = (client, message, args) => {
                     name: `${roleName}`,
                     mentionable: true
                 }))
-                .then(msg => {
-                    msg.edit(`Done!!`);
-                })
-                // .then(role => console.log(`Created role ${role.name}`))
+                .then(
+                    msg => {
+                        msg.edit(`Done!! Created role \`@${roleName}\` for game **${gameName}**`);
+                    })
+                .then(role => console.log(`Created role ${role.name}`))
                 .catch(console.error);
-
-
-
         } else
-        if (args[0] == "join") { //join
+        if (args[0] == "join") { //join gameGroup
             let newargs = args.shift();
             message.channel.sendMessage(`args: ${args}`);
             name = args.join(' ');
             message.channel.sendMessage(`name: ${name}`);
-
-
             if (gameGroup[name]) {
                 message.channel.sendMessage(`Found role @${gameGroup[name]}`);
             }
-
-
-
         } else {
             return message.channel.sendMessage("Error: Use -help gamegroup");
         }
