@@ -1,30 +1,33 @@
+const Discord = require("discord.js");
 var getUser = require('../util/getUser.js');
 
 exports.run = function(client, message, args) {
     if (!args[0]) {
         message.reply("Your avatar is:");
-        message.channel.sendFile(message.author.avatarURL, 'avatar.jpg');
-    } else {
-        if (args[0].toLowerCase() === 'server') {
-            message.channel.sendMessage(`The server avatar is:`);
-            message.channel.sendFile(message.guild.iconURL, `servericon.jpg`);
-        } else
-        if (message.mentions.users.first()) {
-            target = message.mentions.users.first();
-            message.channel.sendMessage(`${target}'s avatar is:`);
-            message.channel.sendFile(target.avatarURL, `avatar.jpg`);
-        } else
-        if (args[0]) {
-            target = getUser(message, args[0]);
-            if (!target) {
-                message.channel.sendMessage(`Error: User not found`);
-            } else {
-                message.channel.sendMessage(`${target}'s avatar is:`);
-                message.channel.sendFile(target.user.avatarURL, 'avatar.jpg');
-            }
+        message.channel.send(new Discord.Attachment(message.author.avatarURL, 'avatar.jpg'));
+        // message.channel.send(avatar);
+    } else if (args[0].toLowerCase() === 'server') {
+        serveravatar = message.guild.iconURL;
+        if (serveravatar) {
+            message.channel.send(`The server avatar is:`);
+            message.channel.send(new Discord.Attachment(message.guild.iconURL, 'avatar.jpg'));
         } else {
-            return message.channel.sendMessage(`Error: incorrect format`);
+            message.channel.send("This server doesn't have an icon");
         }
+    } else if (message.mentions.users.first()) {
+        target = message.mentions.users.first();
+        message.channel.send(`${target}'s avatar is:`);
+        message.channel.send(new Discord.Attachment(target.avatarURL, 'avatar.jpg'));
+    } else if (args[0]) {
+        target = getUser(message, args[0]);
+        if (target) {
+          message.channel.send(`${target}'s avatar is:`);
+          message.channel.send(new Discord.Attachment(target.avatarURL, 'avatar.jpg'));
+        } else {
+            message.channel.send(`Error: User not found`);
+        }
+    } else {
+        return message.channel.send(`Error: incorrect format`);
     }
 };
 
