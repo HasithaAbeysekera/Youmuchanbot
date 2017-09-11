@@ -1,10 +1,12 @@
+const Discord = require("discord.js");
+var assets = require('../assets/assets.json');
+
 exports.run = function(client, message, args) {
-    message.channel.sendEmbed({
-        color: 0xFFFFFF,
-        image: {
-            url: "http://i.imgur.com/V3KrCUo.gif"
-        }
-    });
+
+  const embed = new Discord.RichEmbed()
+      .setImage(assets["puckclap"])
+      .setColor(0xFFFFFF)
+  message.channel.send(embed);
 };
 
 exports.conf = {

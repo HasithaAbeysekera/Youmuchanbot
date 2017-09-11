@@ -1,18 +1,17 @@
+const Discord = require("discord.js");
+var assets = require('../assets/assets.json');
+
 exports.run = function(client, message, args) {
-    let sushiRole = message.guild.roles.find("name", "Sushi-ass man");
-    if (message.member.roles.has(sushiRole.id)) {
-        // message.channel.sendMessage("Sushi!");
-        // message.channel.sendFile("http://i.imgur.com/mlRUf0a.gif", "sishi.gif");
-        message.channel.sendEmbed({
-          title: "SUSHI",
-            color: 0xFF0000,
-            image: {
-                url: "http://i.imgur.com/mlRUf0a.gif"
-            }
-        });
-    } else {
-        message.channel.sendMessage("You do not have the power of the sushi");
-    }
+  let sushiRole = message.guild.roles.find("name", "Sushi-ass man");
+  if (message.member.roles.has(sushiRole.id)) {
+    const embed = new Discord.RichEmbed()
+      .setTitle("SUSHI")
+      .setImage(assets["sushi"])
+      .setColor(0xFF0000)
+    message.channel.send(embed);
+  } else {
+    message.channel.sendMessage("You do not have the power of the sushi");
+  }
 };
 
 exports.conf = {

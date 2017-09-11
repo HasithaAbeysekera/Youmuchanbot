@@ -1,21 +1,22 @@
+const Discord = require("discord.js");
+var assets = require('../assets/assets.json');
+
 exports.run = function(client, message, args) {
-    message.channel.sendEmbed({
-        color: 0x00FFFF,
-        image: {
-            url: "http://i.imgur.com/wSJoNoN.gif"
-        }
-    });
+    const embed = new Discord.RichEmbed()
+        .setImage(assets["fistbump"])
+        .setColor(0x00FFFF)
+    message.channel.send(embed);
 };
 
 exports.conf = {
-  enabled: true,
-  guildOnly: false,
-  aliases: [],
-  permLevel: 0
+    enabled: true,
+    guildOnly: false,
+    aliases: [],
+    permLevel: 0
 };
 
 exports.help = {
-  name: 'fistbump',
-  description: 'A symbol of giving respect or approval',
-  usage: 'fistbump'
+    name: 'fistbump',
+    description: 'A symbol of giving respect or approval',
+    usage: 'fistbump'
 };

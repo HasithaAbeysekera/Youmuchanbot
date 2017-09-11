@@ -1,10 +1,11 @@
+const Discord = require("discord.js");
+var assets = require('../assets/assets.json');
+
 exports.run = function(client, message, args) {
-    message.channel.sendEmbed({
-        color: 0xFFFF00,
-        image: {
-            url: "http://i.imgur.com/Jo8hycn.gif"
-        }
-    });
+    const embed = new Discord.RichEmbed()
+        .setImage(assets["runpika"])
+        .setColor(0xFFFF00)
+    message.channel.send(embed);
 };
 
 exports.conf = {

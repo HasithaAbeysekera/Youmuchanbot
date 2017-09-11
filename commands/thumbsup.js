@@ -1,10 +1,11 @@
+const Discord = require("discord.js");
+var assets = require('../assets/assets.json');
+
 exports.run = function(client, message, args) {
-    message.channel.sendEmbed({
-        color: 0xFF0000,
-        image: {
-            url: "http://i.imgur.com/DCFzew1.jpg"
-        }
-    });
+  const embed = new Discord.RichEmbed()
+    .setImage(assets["thumbsup"])
+    .setColor(0xFF0000)
+  message.channel.send(embed);
 };
 
 exports.conf = {

@@ -1,5 +1,5 @@
 exports.run = function(client, message, args) {
-    message.channel.sendMessage(args.join(" "));
+    message.channel.send(args.join(" "));
 };
 
 exports.conf = {

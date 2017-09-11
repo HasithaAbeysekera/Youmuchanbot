@@ -14,7 +14,7 @@ exports.run = (client, message, args) => {
 
 
     if (!message.mentions.users.first()) {
-        return message.channel.sendMessage('Mention a user to mute');
+        return message.channel.send('Mention a user to mute');
     } else {
         user = message.mentions.users.first();
         if (!client.lockit) client.lockit = [];
@@ -27,7 +27,7 @@ exports.run = (client, message, args) => {
 
             let target = getGuildMember(message, user);
             target.removeRole(silenced).then(() => {
-                message.channel.sendMessage(`${target.user} has been unmuted`);
+                message.channel.send(`${target.user} has been unmuted`);
                 clearTimeout(client.lockit[target.id]);
                 delete client.lockit[target.id];
             }).catch(error => {
@@ -46,9 +46,9 @@ exports.run = (client, message, args) => {
         } else {
             let target = getGuildMember(message, user);
             target.addRole(silenced).then(() => {
-                message.channel.sendMessage(`${target.user} has been muted for ${ms(ms(time), { long:true })}`).then(() => {
+                message.channel.send(`${target.user} has been muted for ${ms(ms(time), { long:true })}`).then(() => {
                     client.lockit[target.id] = setTimeout(() => {
-                        target.removeRole(silenced).then(message.channel.sendMessage('Lockdown lifted.')).catch(console.error);
+                        target.removeRole(silenced).then(message.channel.send('Lockdown lifted.')).catch(console.error);
                         delete client.lockit[target.id];
                     }, ms(time));
                 }).catch(error => {

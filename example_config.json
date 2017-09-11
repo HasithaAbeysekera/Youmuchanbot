@@ -1,9 +1,10 @@
 {
-    "token": "Insert bot token here",
-    "prefix": "-",
-    "ownerid": "Guild owner's user id here",
-    "modrolename": "ModeratorRoleNameHere",
-    "adminrolename": "AdminRoleNameHere",
-    "silencedrole": "SilencedRoleNameHere"
-    }
+  "token": "Insert bot token here",
+  "prefix": "-",
+  "ownerid": "Guild owner's user id here",
+  "defaultChannel": "defaultChannel id here, this is the channel that will display the dsay command",
+  "logChannel": "logChannel id, this channel will be used for the member joining and leaving event messages",
+  "modrolename": "ModeratorRoleNameHere",
+  "adminrolename": "AdminRoleNameHere",
+  "silencedrole": "SilencedRoleNameHere"
 }

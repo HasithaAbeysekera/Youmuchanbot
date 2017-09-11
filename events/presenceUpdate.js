@@ -2,6 +2,7 @@ const fs = require('fs');
 var gameGroups = require('../db/gamegroups.json');
 
 module.exports = (oldMember, newMember) => {
+/*
     let guild = newMember.guild;
     if (!newMember.presence.game) {
         return;
@@ -13,4 +14,5 @@ module.exports = (oldMember, newMember) => {
           newMember.addRole(newMember.guild.roles.find('name', rolename));
         }
     }
+    */
 };

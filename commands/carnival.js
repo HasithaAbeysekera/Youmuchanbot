@@ -1,22 +1,23 @@
+const Discord = require("discord.js");
+var assets = require('../assets/assets.json');
+
 exports.run = function(client, message, args) {
-    message.channel.sendEmbed({
-        title: 'CARNIVAL DAYO!',
-        color: 15750656,
-        image: {
-            url: "http://i.imgur.com/BH2dcnh.gif"
-        }
-    });
+
+    const embed = new Discord.RichEmbed()
+        .setImage(assets["carnival"])
+        .setColor(15750656)
+    message.channel.send(embed);
 };
 
 exports.conf = {
-  enabled: true,
-  guildOnly: false,
-  aliases: ['carnivaldayo'],
-  permLevel: 0
+    enabled: true,
+    guildOnly: false,
+    aliases: ['carnivaldayo'],
+    permLevel: 0
 };
 
 exports.help = {
-  name: 'carnival',
-  description: 'IT\'S A CARNIVAL',
-  usage: 'carnival'
+    name: 'carnival',
+    description: 'IT\'S A CARNIVAL',
+    usage: 'carnival'
 };
