@@ -1,3 +1,3 @@
 module.exports = client => {
-    console.log("I'm online.");
+  console.log("I'm online.");
 }

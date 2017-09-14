@@ -1,9 +1,19 @@
 /*
 Get user object when given a targetUser string
 */
-const avatars = "../assets/avatars";
+const fs = require('fs');
+const dir = './assets/avatars/';
 module.exports = (client) => {
-  console.log(`change avatars`);
-//  number = Math.random() * avatars.length;
-      return;
-}
+  fs.readdir(dir, (err, files) => {
+    avatarCount = files.length;
+    newAvatarNumber = Math.floor((Math.random() * files.length) + 1);
+    if (newAvatarNumber < 10) {
+      newAvatar = `${dir}avatar0${newAvatarNumber}.jpg`;
+    } else {
+      newAvatar = `${dir}avatar${newAvatarNumber}.jpg`;
+    }
+    client.user.setAvatar(newAvatar);
+    console.log(`avatar changed to ${newAvatar}`);
+  });
+  return;
+};
