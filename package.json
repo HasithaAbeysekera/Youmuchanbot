@@ -10,6 +10,7 @@
   "license": "MIT",
   "dependencies": {
     "discord.js": "^11.2.1",
+    "ffmpeg-binaries": "^3.2.2-3",
     "moment": "^2.18.1",
     "ms": "^1.0.0",
     "request": "^2.81.0",
