@@ -34,7 +34,11 @@ exports.run = function(client, message, args) {
           message.channel.send(`account ID: ${accountId}`);
           picURL = `https://${regionURL}.warshipstoday.com/signature/${accountId}/dark.png`
           message.channel.send(`WTR image: ${picURL}`);
-          message.channel.send(new Discord.Attachment(picURL, 'dark.png'));
+          message.channel.send(new Discord.Attachment(picURL, 'dark.png')).then(msg => {
+            console.log("wtr image sent");
+          }).catch(err => {
+            console.log(err.stack);
+          });
         }
       });
     }
