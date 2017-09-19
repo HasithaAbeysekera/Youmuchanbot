@@ -8,7 +8,7 @@ exports.run = function(client, message, args) {
     return message.channel.send("Invalid input, use the help commands for more details");
   } else {
     if (validRegions.indexOf(args[0].toLowerCase()) == -1) {
-      return console.log(`Invalid region, the valid regions are : ${validRegions}`);
+      return message.channel.send(`Invalid region, the valid regions are : ${validRegions}`);
     } else {
       regionURL = args[0].toLowerCase();
       username = args[1].toLowerCase();
@@ -20,7 +20,7 @@ exports.run = function(client, message, args) {
       }
 
       var apiURL = `https://api.worldofwarships.${regionURL}/wows/account/list/?application_id=682fc0fd90551e7e6ee67aa0d40e2db8&search=${username}`;
-      message.channel.send(apiURL);
+      // message.channel.send(apiURL);
 
       request({
         url: apiURL,
@@ -30,10 +30,10 @@ exports.run = function(client, message, args) {
           //console.log(body) // Print the json response
           var nickname = body["data"][0].nickname;
           var accountId = body["data"][0].account_id;
-          message.channel.send(`Nickname: ${nickname}`);
-          message.channel.send(`account ID: ${accountId}`);
+          // message.channel.send(`account ID: ${accountId}`);
+          message.channel.send(`Grabbing WTR signature for ${nickname}`);
           picURL = `https://${regionURL}.warshipstoday.com/signature/${accountId}/dark.png`
-          message.channel.send(`WTR image: ${picURL}`);
+          // message.channel.send(`WTR image: ${picURL}`);
           message.channel.send(new Discord.Attachment(picURL, 'dark.png')).then(msg => {
             console.log("wtr image sent");
           }).catch(err => {
@@ -54,6 +54,6 @@ exports.conf = {
 
 exports.help = {
   name: 'wtr',
-  description: 'Test function for WoWs commands',
+  description: 'Displays your WTR signature from warships.today',
   usage: 'wtr [region] [username]'
 };
