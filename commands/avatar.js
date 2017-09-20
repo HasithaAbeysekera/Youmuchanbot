@@ -24,8 +24,8 @@ exports.run = function(client, message, args) {
   } else if (args[0]) {
     target = getUser(message, args[0]);
     if (target) {
+      message.channel.send(`${target}'s avatar is:`);
       if (target.id == owner && message.author.id != owner) {
-        message.channel.send(`${target}'s avatar is:`);
         return message.channel.send("FUCK OFF JAMES");
       }
       return message.channel.send(new Discord.Attachment(target.avatarURL, 'avatar.jpg'));
