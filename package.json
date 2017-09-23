@@ -14,7 +14,8 @@
     "moment": "^2.18.1",
     "ms": "^1.0.0",
     "request": "^2.81.0",
-    "request-promise": "^4.2.1"
+    "request-promise": "^4.2.1",
+    "ytdl-core": "^0.17.1"
   },
   "devDependencies": {
     "eslint": "^3.18.0",

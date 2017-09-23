@@ -1,15 +1,24 @@
+const ytdl = require('ytdl-core');
+const request = require("request");
+var joinVoiceChannel = require('../util/joinVoiceChannel.js');
 exports.run = function(client, message, args) {
-  voiceChannel = message.member.voiceChannel;
-  const permissions = voiceChannel.permissionsFor(message.client.user);
-  if (!voiceChannel) {
-    return message.reply("You aren't in a voice channel");
-  } else if (!permissions.has('CONNECT')) {
-    return message.reply("I don't have permission to connect to that channel");
-  } else if (!permissions.has('SPEAK')) {
-    return message.reply("I don't have permission to speak in that channel");
-  } else {
-    voiceChannel.join();
-  }
+
+
+  // if (!client.voiceConnections) {
+    joinVoiceChannel(client, message);
+  // }
+
+
+
+
+  // var regExp = /^.*(youtu.be\/|list=)([^#\&\?]*).*/;
+  // var match = args[1].match(regExp);
+  //
+  // if (match && match[2]) {
+  //   queue_playlist(match[2], message);
+  // } else {
+  //   add_to_queue(params[1], message);
+  // }
 };
 
 exports.conf = {
