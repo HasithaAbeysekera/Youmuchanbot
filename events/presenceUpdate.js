@@ -2,7 +2,7 @@ const Discord = require("discord.js");
 const fs = require('fs');
 var gameGroups = require('../db/gamegroups.json');
 const annoyJames = true;
-const annoyID = 77183989349089280;
+const annoyID = 161416856689704961;
 var assets = require('../assets/assets.json');
 module.exports = (oldMember, newMember) => {
   if (annoyJames) {
