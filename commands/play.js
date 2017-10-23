@@ -1,8 +1,9 @@
 const ytdl = require('ytdl-core');
 const request = require("request");
-var opus = require('node-opus');
+//var opus = require('node-opus');
 var joinVoiceChannel = require('../util/joinVoiceChannel.js');
 exports.run = function(client, message, args) {
+/*
   // if (!client.voiceConnections) {
     // joinVoiceChannel(client, message);
   // }
@@ -17,7 +18,7 @@ const streamOptions = { seek: 0, volume: 1 };
     const dispatcher = connection.playStream(stream, streamOptions);
   })
   .catch(console.error);
-
+*/
 
 
   // var regExp = /^.*(youtu.be\/|list=)([^#\&\?]*).*/;
