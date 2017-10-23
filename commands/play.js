@@ -1,13 +1,22 @@
 const ytdl = require('ytdl-core');
 const request = require("request");
+var opus = require('node-opus');
 var joinVoiceChannel = require('../util/joinVoiceChannel.js');
 exports.run = function(client, message, args) {
-
-
   // if (!client.voiceConnections) {
-    joinVoiceChannel(client, message);
+    // joinVoiceChannel(client, message);
   // }
+  // message.channel.send(args[0]);
+  //
 
+const streamOptions = { seek: 0, volume: 1 };
+  voiceChannel = message.member.voiceChannel;
+  voiceChannel.join()
+  .then(connection => {
+    const stream = ytdl('https://www.youtube.com/watch?v=XAWgeLF9EVQ', { filter : 'audioonly' });
+    const dispatcher = connection.playStream(stream, streamOptions);
+  })
+  .catch(console.error);
 
 
 
